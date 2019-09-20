@@ -19,12 +19,6 @@ class Transfer
         self.receiver.deposit(self.amount)
         self.status = "complete"
       end
-
-      if self.status == "reversed"
-        puts "HERE"
-        self.sender.deposit(self.amount)
-        self.receiver.deposit(-self.amount)
-      end
     end
 
     if !self.sender.valid? || !self.receiver.valid?
@@ -35,8 +29,9 @@ class Transfer
 
   def reverse_transfer
     if self.status != "reversed"
+      self.sender.deposit(self.amount)
+      self.receiver.deposit(-self.amount)
       self.status = "reversed"
-      self.execute_transaction
     end
   end
 end

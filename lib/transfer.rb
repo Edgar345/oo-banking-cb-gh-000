@@ -26,7 +26,7 @@ class Transfer
   end
 
   def reverse_transfer
-    return if self.status == "reversed"
+    puts "reverse_transfer: #{self.status == "reversed"}"
 
     if self.status != "reversed"
       self.sender.deposit(self.amount)

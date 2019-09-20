@@ -33,6 +33,7 @@ class Transfer
 
   def reverse_transfer
     if self.status != "reversed"
+      self.status = "reversed"
     end
   end
 end

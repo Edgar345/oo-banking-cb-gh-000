@@ -31,7 +31,7 @@ class Transfer
       self.receiver.deposit(-self.amount)
       self.status = "reversed"
 
-      puts "here: status: #{self.status}: status == reversed #{self.status == "reversed"}"
+      puts "here: status: #{self.status}: status == reversed #{self.status != "reversed"}"
     end
   end
 end

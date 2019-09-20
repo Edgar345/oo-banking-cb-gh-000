@@ -31,7 +31,7 @@ class Transfer
       self.receiver.deposit(-self.amount)
       self.status = "reversed"
 
-      puts "here"
+      puts "here: status: #{self.status}"
     end
   end
 end

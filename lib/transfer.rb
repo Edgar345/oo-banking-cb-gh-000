@@ -20,7 +20,9 @@ class Transfer
         self.status = "complete"
       end
 
-      
+      if self.status == "reversed"
+
+      ends
     end
 
     if !self.sender.valid? || !self.receiver.valid?
@@ -30,6 +32,7 @@ class Transfer
   end
 
   def reverse_transfer
-
+    if self.status != "reversed"
+    end
   end
 end

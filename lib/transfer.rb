@@ -26,14 +26,6 @@ class Transfer
   end
 
   def reverse_transfer
-    if self.status != "reversed"
-      self.status = "reversed"
-      sender = self.sender
-      receiver = self.receiver
-      self.sender = receiver
-      self.receiver = sender
-      self.execute_transaction
-      self.status = "reversed"
-    end
+    
   end
 end

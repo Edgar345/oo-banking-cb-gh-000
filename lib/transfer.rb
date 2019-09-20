@@ -28,9 +28,11 @@ class Transfer
   def reverse_transfer
     puts "STATUS: #{self.status}"
     #can only reverse completed transaction
-    self.sender.deposit(self.amount)
-    self.receiver.deposit(-self.amount)
-    self.status = "reversed"
+    if (self.status == "complete") {
+      self.sender.deposit(self.amount)
+      self.receiver.deposit(-self.amount)
+      self.status = "reversed"
+    }
     puts "AFTER: #{self.status}"
   end
 end

@@ -19,6 +19,8 @@ class Transfer
         self.receiver.deposit(self.amount)
         self.status = "complete"
       end
+
+      
     end
 
     if !self.sender.valid? || !self.receiver.valid?

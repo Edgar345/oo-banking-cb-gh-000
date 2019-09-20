@@ -13,12 +13,10 @@ class Transfer
   end
 
   def execute_transaction
-    if self.sender.valid? && self.receiver.valid?
-      if self.status != "complete"
+    if self.status != "complete" && self.sender.valid? && self.receiver.valid?
         self.sender.deposit(-self.amount)
         self.receiver.deposit(self.amount)
         self.status = "complete"
-      end
     end
 
     if !self.sender.valid? || !self.receiver.valid?
